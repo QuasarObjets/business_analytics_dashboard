@@ -1,0 +1,27 @@
+/* Estilos globales */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Colores */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+}
+
+/* Márgenes */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Otros estilos globales */
+/* ... */
+
+/* Estilos específicos para componentes */
+/* ... */

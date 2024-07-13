@@ -1,0 +1,55 @@
+// app/components/[varios archivos .tsx para componentes]
+
+// Este archivo está vacío intencionalmente. Puedes crear aquí tus componentes reutilizables para la aplicación web. Puedes crear tantos archivos .tsx como necesites para definir diferentes componentes.
+
+// Ejemplo de componente Button.tsx
+import React from 'react';
+
+interface ButtonProps {
+  text: string;
+  onClick: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+  return (
+    <button onClick={onClick}>
+      {text}
+    </button>
+  );
+}
+
+export default Button;
+
+// Ejemplo de componente Form.tsx
+import React, { useState } from 'react';
+
+interface FormProps {
+  onSubmit: (data: FormData) => void;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+}
+
+const Form: React.FC<FormProps> = ({ onSubmit }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit({ name, email });
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
+      <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default Form;
+
+// Puedes crear más archivos .tsx para definir otros componentes reutilizables en la carpeta app/components. Recuerda exportar cada componente para que pueda ser utilizado en otras partes de la aplicación.
